@@ -5,11 +5,18 @@ const app = Vue.createApp({
   }),
   methods: {
     addItem: function(event) {
-      console.log('Clicked!');
+      if (this.newItem === '') return 
       let todo = {
-        item: this.newItem
+        item: this.newItem,
+        idDone: false
       }
       this.todos.push(todo)
+      this.newItem = ''
+    },
+    deleteItem: function(index) {
+      // 第一引数：削除を開始するインデックス
+      // 第二引数：削除をする長さ
+      this.todos.splice(index, 1)
     }
   }
 

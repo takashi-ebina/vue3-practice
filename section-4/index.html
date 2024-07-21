@@ -14,6 +14,14 @@
       <input type="text" v-model="newItem">
       <button v-on:click="addItem">Add</button> 
     </form>
+    <ul>
+      <!-- v-forで配列をループする際、第二引数？でインデックスを取得することが可能-->
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone"> 
+        <span v-bind:class="{ done: todo.isDone}">{{ todo.item }}</span>
+        <button v-on:click="deleteItem(index)">Delete</button>
+      </li>
+    </ul>
     <pre>{{ $data }}</pre>
   </div>
   <script src="https://unpkg.com/vue@3.1.5"></script>
