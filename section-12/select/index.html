@@ -9,7 +9,12 @@
 </head>
 <body>
   <div id="app">
-    <p> {{ message }}</p>
+    <select v-model="selected" multiple>
+      <option >Red</option>
+      <option >Green</option>
+      <option >Blue</option>
+    </select>
+    <p>{{ selected }}</p>
   </div>
   <script src="https://unpkg.com/vue@3.1.5"></script>
   <script src="js/main.js"></script>
