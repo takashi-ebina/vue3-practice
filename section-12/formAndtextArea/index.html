@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <p> {{ message }}</p>
+    <!-- textareaではマスタッシュ構文を利用しても値の変更が反映されない-->
+    <textarea>{{ message }}</textarea>
+    <textarea v-model="message"></textarea>
+    <!-- v-model利用時はvalue属性の値は無視される-->
+    <input type="text" v-model="message" value="hogehoge">
+    <pre>
+      {{ $data }}
+    </pre>
+  </div>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
